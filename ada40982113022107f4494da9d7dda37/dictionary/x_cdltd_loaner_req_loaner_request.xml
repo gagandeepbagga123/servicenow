@@ -1,3 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="dd2505c2113022107f4494da9d7dda77" extends="task" label="Loaner Request" max_length="40" name="x_cdltd_loaner_req_loaner_request" type="collection"/>
+    <element db_object_id="dd2505c2113022107f4494da9d7dda77" extends="task" label="Loaner Request" max_length="40" name="x_cdltd_loaner_req_loaner_request" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" default="santa clara" label="Depot" max_length="40" name="depot" type="string">
+            <choice>
+                <element inactive_on_update="false" label="New York" sequence="0" value="new york"/>
+                <element inactive_on_update="false" label="London" sequence="1" value="london"/>
+                <element inactive_on_update="false" label="Buenos Aires" sequence="2" value="buenos aires"/>
+                <element inactive_on_update="false" label="Santa Clara" sequence="3" value="santa clara"/>
+                <element inactive_on_update="false" label="Singapore" sequence="4" value="singapore"/>
+                <element inactive_on_update="false" label="Sydney" sequence="5" value="sydney"/>
+                <element inactive_on_update="false" label="other" sequence="6" value="other"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="End Date" mandatory="true" max_length="40" name="end_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Location to be used" max_length="40" name="location_to_be_used" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="other" type="string"/>
+        <element attributes="encode_utf8=false" label="Requested For" mandatory="true" max_length="32" name="requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Start date" mandatory="true" max_length="40" name="start_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Item type" max_length="40" name="u_choice_4" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Laptop" sequence="0" value="cmdb_ci_computer"/>
+                <element inactive_on_update="false" label="Mobile Phone" sequence="1" value="cmdb_ci_mobile_device"/>
+                <element inactive_on_update="false" label="Projector" sequence="2" value="cmdb_ci_projector"/>
+            </choice>
+        </element>
+    </element>
 </database>
